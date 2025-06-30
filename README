@@ -1,0 +1,36 @@
+Title: Spring Boot REST API - Vendor Management
+
+This is my first backend REST API project built with Spring Boot.
+It performs basic CRUD operations on a Vendor entity and is tested using Postman.
+
+1.) Features
+- Create a new vendor
+- Retrieve all vendors
+- Update vendor details
+- Delete a vendor
+
+2.) Technologies Used
+- Java 17
+- Spring Boot
+- Postman
+- IntelliJ IDEA
+
+3.) How to Run
+1. Clone the repository
+2. Open in IntelliJ IDEA
+3. Run `CloudVendorApplication.java`
+4. Use Postman to hit endpoints
+
+4.) Sample POST Request
+POST /vendors
+Content-Type: application/json
+{
+"vendorId": "101",
+"vendorName": "AWS",
+"vendorAddress": "USA",
+"vendorPhoneNumber": "1234567890"
+}
+
+5.) Status
+Completed and tested with Postman.
+
