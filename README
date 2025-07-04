@@ -1,36 +1,27 @@
-Title: Spring Boot REST API - Vendor Management
+Title: Spring Boot JSON Response Handling API
 
-This is my first backend REST API project built with Spring Boot.
-It performs basic CRUD operations on a Vendor entity and is tested using Postman.
+This project shows how to build a Spring Boot REST API that returns clean, structured, and consistent JSON responses. 
+Instead of returning raw entity data, we wrap the output with a standard format that includes HTTP status, data, and a custom message.
 
-1.) Features
-- Create a new vendor
-- Retrieve all vendors
-- Update vendor details
-- Delete a vendor
+---
 
-2.) Technologies Used
-- Java 17
-- Spring Boot
-- Postman
-- IntelliJ IDEA
+What’s Implemented
 
-3.) How to Run
-1. Clone the repository
-2. Open in IntelliJ IDEA
-3. Run `CloudVendorApplication.java`
-4. Use Postman to hit endpoints
+I have created one response package and inside created one java class file called reponseHandler, in that all the custom reponse handler logic are written
+and then in controller java backend rest api file there @getMapping ("VendorId") simply called that responseBuilder method that was created in reponseHandler java file
+that should be called here and return that message, httpstatus, object.
 
-4.) Sample POST Request
-POST /vendors
-Content-Type: application/json
-{
-"vendorId": "101",
-"vendorName": "AWS",
-"vendorAddress": "USA",
-"vendorPhoneNumber": "1234567890"
-}
+-Custom Response Wrapper class (ResponseHandler)
+Every API returns consistent format:
 
-5.) Status
-Completed and tested with Postman.
-
+  ```json
+  {
+    "Data": {
+      "vendorId": "c4",
+      "vendorName": "Dandu Bhanuprakash",
+      "vendorAddress": "Chandramouli Nagar",
+      "vendorPhoneNumber": "four"
+    },
+    "HttpStatus": "OK"
+    "message": "Requested vendor details are given here"
+  }
